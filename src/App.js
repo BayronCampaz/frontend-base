@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import Form from './components/Form'
 import './App.css';
+import axios from 'axios';
 import Lyrics from './components/Lyrics';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [consult, saveConsult] = useState(false);
   const [result, saveResult] = useState({});
   const [error, saveError] = useState(false);
+  const [resultTranslate, saveResultTranslate] = useState({});
 
   const { artist, title } = search;
 
@@ -31,13 +33,12 @@ function App() {
     // eslint-disable-next-line
   }, [consult]);
 
+
   let component;
   if(error || result.lyrics === "") {
     component = <p className="alert alert-warning">No hay resultados para la busqueda</p> 
   } else {
-    component = <Lyrics 
-                    result={result}
-                />
+    component = <Lyrics result={result}/>
   }
 
   return (
