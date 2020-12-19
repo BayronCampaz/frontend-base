@@ -65,8 +65,12 @@ const Form = ({ search, saveSearch, saveConsult }) => {
                 <button
                     type="submit"
                     value="Find Lyrics"
-                    className="btn btn-primary mt-2 mb-2"
-                >Find Lyrics</button>
+                    className="btn btn-primary mt-2 mb-3 mr-3">Find Lyrics !</button>
+                
+                <button
+                    type="submit"
+                    value="Translate"
+                    className="btn btn-primary mt-2 mb-3">Translate</button>
         </form>
     );
 }

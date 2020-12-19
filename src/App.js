@@ -23,6 +23,8 @@ function App() {
         const api = await fetch(query);
         const song = await api.json()
         saveResult(song);
+        saveConsult(false);
+
       }
     }
     consultAPI();
